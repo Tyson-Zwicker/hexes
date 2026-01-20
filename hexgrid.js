@@ -135,10 +135,12 @@ export default class HexGrid {
       ctx.lineTo(corners[i].x, corners[i].y);
     }
     ctx.closePath();
-    if (fillColor) {
+    if (fillColor) { //todo: white streak here is for testing coordinate system..
       if (q === centerQ || r == centerR) {
-        ctx.fillStyle = '#ffffff', strokeStyle = '#ff0000', lineWidth = 5;
-      } else {
+        ctx.fillStyle = '#ffffff', ctx.strokeStyle = '#ff0000', lineWidth = 5;
+      } else if (q === centerQ && r == centerR) {
+        ctx.fillStyle = '#ff0000', ctx.strokeStyle = '#00000', lineWidth = 5;
+      }else {
         ctx.fillStyle = fillColor; ctx.fill();
       }
       if (strokeColor) {
