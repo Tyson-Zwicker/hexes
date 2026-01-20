@@ -9,4 +9,10 @@ document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 document.addEventListener('DOMContentLoaded', function () {
   grid.drawGrid(ctx, 0, 30, 0, 30, 15, 15, canvas.width, canvas.height,'#112255', '#557700' , 2);
+  canvas.addEventListener ('mouseup',(e)=>{
+    let coord = grid.screenToGrid (e.clientX, e.clientY);
+    console.log (coord);
+    let coords2 = grid.hexToPixel(coord.q, coord.r);
+    console.log (coords2);
+  });
 });
