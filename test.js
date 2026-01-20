@@ -9,10 +9,11 @@ document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 document.addEventListener('DOMContentLoaded', function () {
   grid.drawGrid(ctx, 0, 10, 0, 10, 5, 5, canvas.width, canvas.height,'#112255', '#557700' , 2);
+  console.log ('corners (0,0,10,10:');
   console.log (grid.hexToPixel (0,0));
-    console.log (grid.hexToPixel (10,0));
-    console.log (grid.hexToPixel (10,10));
-    console.log (grid.hexToPixel (0,10));
+  console.log (grid.hexToPixel (10,0));
+  console.log (grid.hexToPixel (10,10));
+  console.log (grid.hexToPixel (0,10));
   canvas.addEventListener ('mouseup',(e)=>{
     let coord = grid.screenToGrid (e.clientX, e.clientY);
     console.log (coord);
